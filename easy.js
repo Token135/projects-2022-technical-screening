@@ -31,13 +31,17 @@ var assert = require("assert")
 // Explanation: Empty array...
 
 const altNumbers = (numArray) => {
+    // Checking if the array is empty and returning an empty array if it is
     if (numArray.length == 0) {
         return []
-
     }
-    let neg_numbers = []
+    let neg_numbers= []
     let pos_numbers = []
+    let return_array = []
     let pos_negative = 0
+    
+    // iterating through the values of the array in order to determine how many positive and negative
+    // Values there are and storing them seperately in order
     for (let i = 0; i < numArray.length; i++) {
         if (numArray[i] < 0) {
             neg_numbers.push(numArray[i])
@@ -47,7 +51,8 @@ const altNumbers = (numArray) => {
             pos_negative++
         }
     }
-    var return_array = []
+    
+    // Checking if positive or negative has more values and then storing the values in the new array in an alternating order
     if (pos_negative > 0) {
         for (let i = 0; i < pos_numbers.length - 1; i++) {
             return_array.push(pos_numbers[i])
